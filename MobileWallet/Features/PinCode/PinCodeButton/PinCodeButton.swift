@@ -8,13 +8,35 @@
 import SwiftUI
 
 struct PinCodeButton: View {
+    let viewModel: PinCodeButtonViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+                viewModel.handleTap()
+        }, label: {
+            switch viewModel.type {
+            case .value(let value): Text(value)
+            case .backSpace: Image(systemName: "delete.left.fill")
+            }
+        })
+        .font(.title)
+        .foregroundColor(Color.black)
+        .padding(25)
+        .clipShape(Circle())
+
     }
+    
+   
 }
 
 struct PinCodeButton_Previews: PreviewProvider {
     static var previews: some View {
-        PinCodeButton()
+        Group {
+            PinCodeButton(viewModel: PinCodeButtonViewModel(type: .value("9")))
+                .frame(width: 100, height: 100)
+            
+            PinCodeButton(viewModel: PinCodeButtonViewModel(type: .backSpace))
+                .frame(width: 100, height: 100)
+        }
     }
 }
