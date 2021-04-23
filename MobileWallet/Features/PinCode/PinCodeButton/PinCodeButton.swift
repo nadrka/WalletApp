@@ -32,7 +32,7 @@ struct PinCodeButton: View {
 struct PinCodeButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PinCodeButton(viewModel: PinCodeButtonViewModel(type: .value("8")))
+            PinCodeButton(viewModel: PinCodeButtonViewModel(type: .value("9")))
                 .frame(width: 100, height: 100)
             
             PinCodeButton(viewModel: PinCodeButtonViewModel(type: .backSpace))
