@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C52F9E5262B1E15007104DE /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 3C52F9E4262B1E15007104DE /* SwiftUIX */; };
+		3C5E1034262B1461007CDBEC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E1033262B1461007CDBEC /* DashboardView.swift */; };
 		CE05DD1A26296D570065EA45 /* MobileWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05DD1926296D570065EA45 /* MobileWalletApp.swift */; };
 		CE05DD1C26296D570065EA45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05DD1B26296D570065EA45 /* ContentView.swift */; };
 		CE05DD2126296D580065EA45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE05DD2026296D580065EA45 /* Preview Assets.xcassets */; };
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C5E1033262B1461007CDBEC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardView.swift; path = MobileWallet/Features/PinCode/DashboardView.swift; sourceTree = SOURCE_ROOT; };
 		CE05DD1626296D570065EA45 /* MobileWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE05DD1926296D570065EA45 /* MobileWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileWalletApp.swift; sourceTree = "<group>"; };
 		CE05DD1B26296D570065EA45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C52F9E5262B1E15007104DE /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +194,7 @@
 		CE05DD6326298B8C0065EA45 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				3C5E1033262B1461007CDBEC /* DashboardView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -247,6 +252,9 @@
 			dependencies = (
 			);
 			name = MobileWallet;
+			packageProductDependencies = (
+				3C52F9E4262B1E15007104DE /* SwiftUIX */,
+			);
 			productName = MobileWallet;
 			productReference = CE05DD1626296D570065EA45 /* MobileWallet.app */;
 			productType = "com.apple.product-type.application";
@@ -318,6 +326,9 @@
 				Base,
 			);
 			mainGroup = CE05DD0D26296D570065EA45;
+			packageReferences = (
+				3C52F9E3262B1E15007104DE /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = CE05DD1726296D570065EA45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -365,6 +376,7 @@
 				CE05DD2326296D580065EA45 /* Persistence.swift in Sources */,
 				CE05DD1C26296D570065EA45 /* ContentView.swift in Sources */,
 				CE05DD2626296D580065EA45 /* MobileWallet.xcdatamodeld in Sources */,
+				3C5E1034262B1461007CDBEC /* DashboardView.swift in Sources */,
 				CE05DD7526298C820065EA45 /* PinCodeView.swift in Sources */,
 				CE05DD8026298CB60065EA45 /* PinCodeButtonViewModel.swift in Sources */,
 				CE05DD1A26296D570065EA45 /* MobileWalletApp.swift in Sources */,
@@ -682,6 +694,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3C52F9E3262B1E15007104DE /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3C52F9E4262B1E15007104DE /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C52F9E3262B1E15007104DE /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CE05DD2426296D580065EA45 /* MobileWallet.xcdatamodeld */ = {
