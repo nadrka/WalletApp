@@ -29,7 +29,7 @@
 		CE8B62C82632C2D800B954B2 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62C72632C2D800B954B2 /* GradientBackgroundView.swift */; };
 		CE8B62D12632C93200B954B2 /* CheckInsOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62D02632C93200B954B2 /* CheckInsOnboardingView.swift */; };
 		CE8B62D62632CC5000B954B2 /* CheckInsOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62D52632CC5000B954B2 /* CheckInsOnboardingViewModel.swift */; };
-		CE8B62DB2632CE1200B954B2 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62DA2632CE1200B954B2 /* LottieView.swift */; };
+		CE8B62DB2632CE1200B954B2 /* SUILottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62DA2632CE1200B954B2 /* SUILottieView.swift */; };
 		CE8B62E12632CE9200B954B2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CE8B62E02632CE9200B954B2 /* Lottie */; };
 		CE8B62E62632EC6600B954B2 /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62E52632EC6600B954B2 /* DatePickerTextField.swift */; };
 /* End PBXBuildFile section */
@@ -79,7 +79,7 @@
 		CE8B62C72632C2D800B954B2 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		CE8B62D02632C93200B954B2 /* CheckInsOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInsOnboardingView.swift; sourceTree = "<group>"; };
 		CE8B62D52632CC5000B954B2 /* CheckInsOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInsOnboardingViewModel.swift; sourceTree = "<group>"; };
-		CE8B62DA2632CE1200B954B2 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		CE8B62DA2632CE1200B954B2 /* SUILottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUILottieView.swift; sourceTree = "<group>"; };
 		CE8B62E52632EC6600B954B2 /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,7 +281,7 @@
 		CE722CCF2632B293008C8B8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE8B62DA2632CE1200B954B2 /* LottieView.swift */,
+				CE8B62DA2632CE1200B954B2 /* SUILottieView.swift */,
 				CE8B62E52632EC6600B954B2 /* DatePickerTextField.swift */,
 			);
 			path = Views;
@@ -460,7 +460,7 @@
 				CE05DD1C26296D570065EA45 /* ContentView.swift in Sources */,
 				CE722CD42632B99D008C8B8A /* SmallBackgroundContainer.swift in Sources */,
 				CE05DD2626296D580065EA45 /* MobileWallet.xcdatamodeld in Sources */,
-				CE8B62DB2632CE1200B954B2 /* LottieView.swift in Sources */,
+				CE8B62DB2632CE1200B954B2 /* SUILottieView.swift in Sources */,
 				CE8B62B32632C0C900B954B2 /* AquaIslandSmaltBlueBackgroundView.swift in Sources */,
 				CE8B62D62632CC5000B954B2 /* CheckInsOnboardingViewModel.swift in Sources */,
 				3C5E1034262B1461007CDBEC /* DashboardView.swift in Sources */,

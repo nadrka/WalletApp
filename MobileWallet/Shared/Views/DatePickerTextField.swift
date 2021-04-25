@@ -9,70 +9,95 @@ import SwiftUI
 
 
 struct DatePickerTextField: UIViewRepresentable {
-    private let textfield = UITextField()
-    private let datePicker = UIDatePicker()
     private let helper = Helper()
-    //    private let helper
-    //    private let dateFormatter: DateFormatter = {
-    //
-    //    }
+    private let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        return dateFormatter
+    }()
+    
     public var placeHolder: String = ""
     @Binding public var date: Date?
     
     func makeUIView(context: UIViewRepresentableContext<DatePickerTextField>) -> UITextField {
-        self.datePicker.datePickerMode = .date
-        self.datePicker.preferredDatePickerStyle = .wheels
-        self.datePicker.addTarget(self.helper, action: #selector(self.helper.dateValueChanged), for: .valueChanged)
         
+        
+        let datePicker = createDatePicker()
+        let textField = createTextField(with: datePicker)
+        
+        helper.dateChanged = {
+            date = datePicker.date
+        }
+        
+        helper.doneButtonTapped = {
+            textField.resignFirstResponder()
+        }
+        
+        return textField
+       
+    }
+    
+    private func createTextField(with datePicker: UIDatePicker) -> UITextField {
+        let textField = UITextField()
+        let toolbar = createToolbar()
+        let datePicker = datePicker
+        
+        textField.inputView = datePicker
+        textField.inputAccessoryView = toolbar
+        textField.placeholder = placeHolder
+        textField.attributedPlaceholder = NSAttributedString(string: placeHolder,
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        textField.underlined()
+        
+        textField.tintColor = UIColor.clear
+        
+        return textField
+    }
+    
+    private func createDatePicker() -> UIDatePicker {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.addTarget(helper, action: #selector(helper.dateValueChanged), for: .valueChanged)
+        datePicker.sizeToFit()
+        datePicker.backgroundColor = .white
+        return datePicker
+    }
+    
+    private func createToolbar() -> UIToolbar {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let flexibleSize = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self.helper, action: #selector(self.helper.doneButtonAction))
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: helper, action: #selector(helper.doneButtonAction))
         
         toolbar.setItems([flexibleSize, doneButton], animated: true)
-        self.textfield.inputAccessoryView = toolbar
-        
-        self.helper.dateChanged = {
-            self.date = self.datePicker.date
-        }
-        
-        self.helper.doneButtonTapped = {
-            self.textfield.resignFirstResponder()
-        }
-        
-        self.datePicker.sizeToFit()
-        self.datePicker.backgroundColor = .white
         toolbar.backgroundColor = .white
-        self.textfield.placeholder = self.placeHolder
-        textfield.attributedPlaceholder = NSAttributedString(string: "Set time",
-                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        self.textfield.inputView = self.datePicker
-        self.textfield.underlined()
-        
-        self.textfield.tintColor = UIColor.clear
-        
-        return self.textfield
+        return toolbar
     }
     
+    func updateUIView(_ uiView: UITextField, context: Context) {
+        if let selectedDate = date {
+            uiView.text = dateFormatter.string(from: selectedDate)
+        }
+    }
+}
+
+extension DatePickerTextField {
     class Helper {
         public var dateChanged: (() -> Void)?
         public var doneButtonTapped: (() -> Void)?
         
         @objc func dateValueChanged() {
-            self.dateChanged?()
+            dateChanged?()
         }
         
         @objc func doneButtonAction() {
-            self.doneButtonTapped?()
+            doneButtonTapped?()
         }
-    }
-    
-    func updateUIView(_ uiView: UIViewType, context: Context) {
     }
 }
 
 extension UITextField {
-    
     func underlined(){
         let border = CALayer()
         let width = CGFloat(1.0)

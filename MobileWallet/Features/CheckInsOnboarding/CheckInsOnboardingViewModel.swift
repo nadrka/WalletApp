@@ -12,8 +12,9 @@ protocol ViewModel {
     
 }
 
-final class CheckinsOnboardingViewModel: ObservableObject,ViewModel {
+final class CheckinsOnboardingViewModel: ObservableObject, ViewModel {
     @Published var state: State = .stress
+    @Published var shouldAnimate = false
     
     func handleActionButtonTap() {
         switch state {
@@ -24,6 +25,7 @@ final class CheckinsOnboardingViewModel: ObservableObject,ViewModel {
     
     private func handleStressActionButtonTap() {
         state = .sleep
+        shouldAnimate = true
     }
     
     private func handleSleepActionButtonTap() {

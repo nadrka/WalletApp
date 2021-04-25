@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CheckInsOnboardingView: View {
     @ObservedObject var viewModel: CheckinsOnboardingViewModel
-    @State var child: Date? = Date()
-    @State private var showingSheet = false
+    @State var child: Date?
+    
     
     init(viewModel: CheckinsOnboardingViewModel) {
         self.viewModel = viewModel
@@ -24,69 +24,102 @@ struct CheckInsOnboardingView: View {
             
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    LottieView(name: "checkIns_onboarding_card_animation", loopMode: .playOnce)
+                    SUILottieView(name: "checkIns_onboarding_card_animation", loopMode: .playOnce, shouldAnimate: $viewModel.shouldAnimate)
                         .height(240)
                     
-                    Text(viewModel.state.titleText)
-                        .font(.title)
-                        .foregroundColor(Color.white)
+                    titleLabel
                         .padding(.top, 25)
+                        .padding([.leading, .trailing], 30)
                     
-                    Text(viewModel.state.descriptionText)
-                        .foregroundColor(Color.white)
+                    descriptionLabel
+                        .padding([.leading, .trailing], 30)
                     
-                    Text(viewModel.state.secondaryTitleText)
-                        .foregroundColor(Color.white)
-                        .bold()
+                    secondaryTitleLabel
                         .padding(.top, 24)
+                        .padding([.leading, .trailing], 30)
                     
-                    Text(viewModel.state.secondaryDescriptionText)
-                        .foregroundColor(Color.white)
+                    secondaryDescriptionLabel
+                        .padding([.leading, .trailing], 30)
                     
                     Spacer()
                     
-//                    if viewModel.state == CheckinsOnboardingViewModel.State.sleep {
-                    VStack(alignment: .leading) {
-                        Text("What time works best for you?")
-                            .foregroundColor(Color.white)
-                            .bold()
-                        
-                        HStack {
-                            Text("Rate my sleep at:")
-                                .padding()
-                            
-                            Spacer()
-                            
-                            DatePickerTextField(placeHolder: "Set time", date: self.$child)
-                                .width(100)
-                        }
-                        .maxWidth(.infinity)
-                        .height(64)
-                        .background(Color.white.opacity(0.7))
-                        .cornerRadius(10)
-                        .padding(.top, 5)
+                    if viewModel.state == CheckinsOnboardingViewModel.State.sleep {
+                        rateSleepView
+                            .padding([.leading, .trailing], 30)
+                            .transition(.slide)
                     }
-                    .animation(.spring())
-//                    }
                     
-                    Button(viewModel.state.actionButtonText, action: {
-                        viewModel.handleActionButtonTap()
-                        self.showingSheet.toggle()
-                    })
-                    .maxWidth(.infinity)
-                    .height(60)
-                    .background(Color.white.opacity(0.7))
-                    .cornerRadius(20)
-                    .padding(.top, 30)
+                    actionButton
+                        .padding(.top, 30)
+                        .padding([.leading, .trailing], 30)
                 }
-                .padding(.bottom, 16)
                 .padding([.leading, .trailing], 30)
+                .padding(.bottom, 16)
             }
+           
         }
         .navigationBarTitle("", displayMode: .inline)
-  
+        
     }
     
+    var titleLabel: some View {
+        Text(viewModel.state.titleText)
+            .font(.title)
+            .foregroundColor(Color.white)
+    }
+    
+    var descriptionLabel: some View {
+        Text(viewModel.state.descriptionText)
+            .foregroundColor(Color.white)
+    }
+    
+    var secondaryTitleLabel: some View {
+        Text(viewModel.state.secondaryTitleText)
+            .foregroundColor(Color.white)
+            .bold()
+    }
+    
+    var secondaryDescriptionLabel: some View {
+        Text(viewModel.state.secondaryDescriptionText)
+            .foregroundColor(Color.white)
+    }
+    
+    var rateSleepView: some View {
+        VStack(alignment: .leading) {
+            Text("What time works best for you?")
+                .foregroundColor(Color.white)
+                .bold()
+            
+            HStack {
+                Text("Rate my sleep at:")
+                    .padding()
+                
+                Spacer()
+                
+                DatePickerTextField(placeHolder: "Set time", date: self.$child)
+                    .width(80)
+                    .overlay(Rectangle().frame(height: 2).foregroundColor(Color.black), alignment: .bottom)
+                
+            }
+            .maxWidth(.infinity)
+            .height(64)
+            .background(Color.white.opacity(0.7))
+            .cornerRadius(10)
+            .padding(.top, 5)
+        }
+    }
+    
+    var actionButton: some View{
+        Button(viewModel.state.actionButtonText, action: {
+            withAnimation {
+                viewModel.handleActionButtonTap()
+            }
+        })
+        .maxWidth(.infinity)
+        .height(60)
+        .background(Color.white.opacity(0.7))
+        .cornerRadius(20)
+    }
 }
 
 struct CheckInsOnboardingView_Previews: PreviewProvider {
@@ -94,13 +127,5 @@ struct CheckInsOnboardingView_Previews: PreviewProvider {
         NavigationView {
             CheckInsOnboardingView(viewModel: CheckinsOnboardingViewModel())
         }
-        
     }
 }
-//
-//struct RateSleepView: View {
-//    var body: some View {
-//
-//    }
-//}
-
