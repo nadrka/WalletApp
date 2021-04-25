@@ -10,36 +10,26 @@ import SwiftUIX
 
 struct DashboardView: View {
     var body: some View {
-        VStack(spacing: 24) {
-            
-            Image("medium-background")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: .infinity)
-            
-            
-            ScrollView(.horizontal, showsIndicators: false){
-                HStack(spacing: 16) {
-                    AccountInfo()
-                    AccountInfo()
-                    AccountInfo()
+        MediumBackgroundContainer {
+            VStack(spacing: 24) {
+                Spacer()
+                ScrollView(.horizontal, showsIndicators: false){
+                    HStack(spacing: 16) {
+                        AccountInfo()
+                        AccountInfo()
+                        AccountInfo()
+                    }
+                    .padding(.leading, 24)
                 }
-                .padding(.leading, 24)
-            }
-            .offset(y: -50)
-            
-            
-            VStack(spacing: 16) {
-                ForEach(actions, id: \.self) { action in
-                    DashboardOption()
+                
+                
+                VStack(spacing: 16) {
+                    ForEach(actions, id: \.self) { action in
+                        DashboardOption()
+                    }
                 }
-            }.offset(y: -50)
-            
-            Spacer()
+            }.padding(.bottom)
         }
-        .background(Color("background"))
-        .ignoresSafeArea()
-        
     }
 }
 
@@ -73,26 +63,31 @@ struct DashboardView_Previews: PreviewProvider {
 
 struct DashboardOption: View {
     var body: some View {
-        HStack(spacing: 12) {
-            
-            Image(systemName: "envelope.circle.fill")
-                .font(.title)
-            
-            
-            Text("Send Money")
-                .bold()
-            
-            Image(systemName: "chevron.right")
-            
-            
-        }
-        .foregroundColor(Color("primary"))
-        .font(.callout)
-        .frame(height: 75, alignment: .trailing)
-        .frame(maxWidth: .infinity)
-        .background(Color.white)
-        .cornerRadius(37, corners: [.bottomLeft, .topLeft])
-        .padding(.leading, 32)
+        Color.white
+            .frame(height: 75, alignment: .trailing)
+            .frame(maxWidth: .infinity)
+            .background(Color.white)
+            .cornerRadius(37, corners: [.bottomLeft, .topLeft])
+            .padding(.leading, 32)
+            .overlay(
+                HStack(spacing: 12) {
+                    
+                    Image(systemName: "envelope.circle.fill")
+                        .font(.title)
+                    
+                    
+                    Text("Send Money")
+                        .bold()
+                    
+                    Image(systemName: "chevron.right")
+                    
+                    
+                }
+                .foregroundColor(Color("primary"))
+                .font(.callout)
+                .padding(.leading, 50),
+                alignment: .leading
+            )
     }
 }
 
@@ -104,22 +99,23 @@ struct AccountInfo: View {
             Text("1273 xxxx xxxx 8771")
                 .font(.body)
             
-            Spacer()
             Text("Current Balance")
                 .font(.caption)
+                .padding(.top, 16)
+            
             Text("$121,700")
                 .font(.title)
             
-            Spacer()
-            Spacer()
+            
             Text("View Statement")
                 .foregroundColor(Color("primary"))
                 .font(.callout)
                 .bold()
+                .padding(.top, 40)
         }
         .padding(20)
-        .background(VisualEffectBlurView(blurStyle: .))
+        .background(VisualEffectBlurView(blurStyle: .systemMaterialLight))
         .cornerRadius(10)
-        .frame(width: 185)
+        .frame(width: 200)
     }
 }

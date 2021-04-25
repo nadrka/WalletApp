@@ -22,6 +22,16 @@
 		CE05DD7B26298CA10065EA45 /* PinCodeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05DD7A26298CA10065EA45 /* PinCodeButton.swift */; };
 		CE05DD8026298CB60065EA45 /* PinCodeButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05DD7F26298CB60065EA45 /* PinCodeButtonViewModel.swift */; };
 		CE05DD852629AB7D0065EA45 /* PinCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05DD842629AB7D0065EA45 /* PinCodeViewModel.swift */; };
+		CE722CD42632B99D008C8B8A /* SmallBackgroundContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE722CD32632B99D008C8B8A /* SmallBackgroundContainer.swift */; };
+		CE722CD92632B9FD008C8B8A /* MediumBackgroundContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE722CD82632B9FD008C8B8A /* MediumBackgroundContainer.swift */; };
+		CE8B62A92632C07500B954B2 /* checkIns_onboarding_card_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = CE8B62A82632C07500B954B2 /* checkIns_onboarding_card_animation.json */; };
+		CE8B62B32632C0C900B954B2 /* AquaIslandSmaltBlueBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62B22632C0C900B954B2 /* AquaIslandSmaltBlueBackgroundView.swift */; };
+		CE8B62C82632C2D800B954B2 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62C72632C2D800B954B2 /* GradientBackgroundView.swift */; };
+		CE8B62D12632C93200B954B2 /* CheckInsOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62D02632C93200B954B2 /* CheckInsOnboardingView.swift */; };
+		CE8B62D62632CC5000B954B2 /* CheckInsOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62D52632CC5000B954B2 /* CheckInsOnboardingViewModel.swift */; };
+		CE8B62DB2632CE1200B954B2 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62DA2632CE1200B954B2 /* LottieView.swift */; };
+		CE8B62E12632CE9200B954B2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CE8B62E02632CE9200B954B2 /* Lottie */; };
+		CE8B62E62632EC6600B954B2 /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B62E52632EC6600B954B2 /* DatePickerTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +72,15 @@
 		CE05DD7A26298CA10065EA45 /* PinCodeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeButton.swift; sourceTree = "<group>"; };
 		CE05DD7F26298CB60065EA45 /* PinCodeButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeButtonViewModel.swift; sourceTree = "<group>"; };
 		CE05DD842629AB7D0065EA45 /* PinCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewModel.swift; sourceTree = "<group>"; };
+		CE722CD32632B99D008C8B8A /* SmallBackgroundContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallBackgroundContainer.swift; sourceTree = "<group>"; };
+		CE722CD82632B9FD008C8B8A /* MediumBackgroundContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumBackgroundContainer.swift; sourceTree = "<group>"; };
+		CE8B62A82632C07500B954B2 /* checkIns_onboarding_card_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkIns_onboarding_card_animation.json; sourceTree = "<group>"; };
+		CE8B62B22632C0C900B954B2 /* AquaIslandSmaltBlueBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AquaIslandSmaltBlueBackgroundView.swift; sourceTree = "<group>"; };
+		CE8B62C72632C2D800B954B2 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
+		CE8B62D02632C93200B954B2 /* CheckInsOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInsOnboardingView.swift; sourceTree = "<group>"; };
+		CE8B62D52632CC5000B954B2 /* CheckInsOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInsOnboardingViewModel.swift; sourceTree = "<group>"; };
+		CE8B62DA2632CE1200B954B2 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		CE8B62E52632EC6600B954B2 /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C52F9E5262B1E15007104DE /* SwiftUIX in Frameworks */,
+				CE8B62E12632CE9200B954B2 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +133,7 @@
 		CE05DD1826296D570065EA45 /* MobileWallet */ = {
 			isa = PBXGroup;
 			children = (
+				CE722CCD2632B281008C8B8A /* Shared */,
 				CE05DD4E262988CD0065EA45 /* Features */,
 				CE05DD4C262988B90065EA45 /* App */,
 				CE05DD4D262988BF0065EA45 /* Resources */,
@@ -162,6 +183,7 @@
 		CE05DD4D262988BF0065EA45 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE8B62A42632BDC400B954B2 /* Animations */,
 				CE05DD5526298A8A0065EA45 /* Colors.xcassets */,
 				CE05DD5D26298AB80065EA45 /* Images.xcassets */,
 			);
@@ -171,6 +193,7 @@
 		CE05DD4E262988CD0065EA45 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CE8B62CF2632C92400B954B2 /* CheckInsOnboarding */,
 				CE05DD6326298B8C0065EA45 /* Dashboard */,
 				CE05DD6626298BA60065EA45 /* ManageMoney */,
 				CE05DD6226298B7E0065EA45 /* PinCode */,
@@ -236,6 +259,60 @@
 			path = PinCodeButton;
 			sourceTree = "<group>";
 		};
+		CE722CCD2632B281008C8B8A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B62BC2632C15200B954B2 /* Gradient */,
+				CE722CCF2632B293008C8B8A /* Views */,
+				CE722CCE2632B287008C8B8A /* Containers */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CE722CCE2632B287008C8B8A /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				CE722CD32632B99D008C8B8A /* SmallBackgroundContainer.swift */,
+				CE722CD82632B9FD008C8B8A /* MediumBackgroundContainer.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		CE722CCF2632B293008C8B8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B62DA2632CE1200B954B2 /* LottieView.swift */,
+				CE8B62E52632EC6600B954B2 /* DatePickerTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE8B62A42632BDC400B954B2 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B62A82632C07500B954B2 /* checkIns_onboarding_card_animation.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		CE8B62BC2632C15200B954B2 /* Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B62C72632C2D800B954B2 /* GradientBackgroundView.swift */,
+				CE8B62B22632C0C900B954B2 /* AquaIslandSmaltBlueBackgroundView.swift */,
+			);
+			path = Gradient;
+			sourceTree = "<group>";
+		};
+		CE8B62CF2632C92400B954B2 /* CheckInsOnboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B62D02632C93200B954B2 /* CheckInsOnboardingView.swift */,
+				CE8B62D52632CC5000B954B2 /* CheckInsOnboardingViewModel.swift */,
+			);
+			path = CheckInsOnboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,6 +331,7 @@
 			name = MobileWallet;
 			packageProductDependencies = (
 				3C52F9E4262B1E15007104DE /* SwiftUIX */,
+				CE8B62E02632CE9200B954B2 /* Lottie */,
 			);
 			productName = MobileWallet;
 			productReference = CE05DD1626296D570065EA45 /* MobileWallet.app */;
@@ -328,6 +406,7 @@
 			mainGroup = CE05DD0D26296D570065EA45;
 			packageReferences = (
 				3C52F9E3262B1E15007104DE /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				CE8B62DF2632CE9200B954B2 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = CE05DD1726296D570065EA45 /* Products */;
 			projectDirPath = "";
@@ -346,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE05DD5E26298AB80065EA45 /* Images.xcassets in Resources */,
+				CE8B62A92632C07500B954B2 /* checkIns_onboarding_card_animation.json in Resources */,
 				CE05DD5626298A8A0065EA45 /* Colors.xcassets in Resources */,
 				CE05DD2126296D580065EA45 /* Preview Assets.xcassets in Resources */,
 			);
@@ -373,14 +453,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE05DD7B26298CA10065EA45 /* PinCodeButton.swift in Sources */,
+				CE8B62D12632C93200B954B2 /* CheckInsOnboardingView.swift in Sources */,
+				CE8B62C82632C2D800B954B2 /* GradientBackgroundView.swift in Sources */,
 				CE05DD2326296D580065EA45 /* Persistence.swift in Sources */,
+				CE8B62E62632EC6600B954B2 /* DatePickerTextField.swift in Sources */,
 				CE05DD1C26296D570065EA45 /* ContentView.swift in Sources */,
+				CE722CD42632B99D008C8B8A /* SmallBackgroundContainer.swift in Sources */,
 				CE05DD2626296D580065EA45 /* MobileWallet.xcdatamodeld in Sources */,
+				CE8B62DB2632CE1200B954B2 /* LottieView.swift in Sources */,
+				CE8B62B32632C0C900B954B2 /* AquaIslandSmaltBlueBackgroundView.swift in Sources */,
+				CE8B62D62632CC5000B954B2 /* CheckInsOnboardingViewModel.swift in Sources */,
 				3C5E1034262B1461007CDBEC /* DashboardView.swift in Sources */,
 				CE05DD7526298C820065EA45 /* PinCodeView.swift in Sources */,
 				CE05DD8026298CB60065EA45 /* PinCodeButtonViewModel.swift in Sources */,
 				CE05DD1A26296D570065EA45 /* MobileWalletApp.swift in Sources */,
 				CE05DD852629AB7D0065EA45 /* PinCodeViewModel.swift in Sources */,
+				CE722CD92632B9FD008C8B8A /* MediumBackgroundContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +792,14 @@
 				minimumVersion = 0.0.6;
 			};
 		};
+		CE8B62DF2632CE9200B954B2 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -711,6 +807,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3C52F9E3262B1E15007104DE /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
+		};
+		CE8B62E02632CE9200B954B2 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE8B62DF2632CE9200B954B2 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 

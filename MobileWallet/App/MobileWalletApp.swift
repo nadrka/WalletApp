@@ -12,7 +12,7 @@ struct MobileWalletApp: App {
 
     var body: some Scene {
         WindowGroup {
-            PinCodeView(viewModel: PinCodeViewModel())
+            CheckInsOnboardingView(viewModel: CheckinsOnboardingViewModel())
         }
     }
 }
